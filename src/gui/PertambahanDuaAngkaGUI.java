@@ -5,6 +5,8 @@
  */
 package gui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ngenyizz
@@ -232,6 +234,15 @@ public class PertambahanDuaAngkaGUI extends javax.swing.JFrame {
 
     private void tambahBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahBtnActionPerformed
         // TODO add your handling code here:
+        if(angkaPertamaTF.getText().equals("") || angkaKeduaTF.getText().equals("")){
+            //kasih pesan input tidak boleh kosong
+            JOptionPane.showMessageDialog(null, "Input tidak boleh kosong");
+        }else{
+            int angkaPertama = Integer.valueOf(angkaPertamaTF.getText());
+            int angkaKedua = Integer.valueOf(angkaKeduaTF.getText());  
+            int hasil = angkaPertama + angkaKedua;
+            hasilTF.setText(Integer.toString(hasil));
+        }
     }//GEN-LAST:event_tambahBtnActionPerformed
 
     private void hapusBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusBtnActionPerformed
